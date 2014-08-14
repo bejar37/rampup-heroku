@@ -1,0 +1,18 @@
+<!doctype html>
+<head>
+  <title>Hello Users!</title>
+</head>
+<body>
+  <form method="POST" action="/user/create" name="user-create">
+    <label for="username">Username</label>
+    <input name="username" id="username" type="text"/>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="text"/>
+    <input type="submit" value="Create User"/>
+  </form>
+  <ul>
+  {% for user in users %}
+  <li><div>{{ user.username }}</div><div>{{user.email}}</div></li>
+  {% endfor %}
+  </ul>
+</body>
