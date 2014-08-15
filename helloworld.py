@@ -3,7 +3,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL",  'sqlite:////tmp/test.db')
 app.debug = True
 db = SQLAlchemy(app)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
